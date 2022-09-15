@@ -1,0 +1,56 @@
+public class FirstPersonShooter extends Game{
+	private int highScore=100;
+	private int score= (int)(Math.random()*100.0);
+	
+	public FirstPersonShooter(String name) {
+		super(name);
+		this.highScore=highScore;
+		this.score=score;
+		
+		
+}
+	public String getname() {
+		return this.name;
+	}
+	public int gethighScore() {
+		return this.highScore;
+	}
+	
+	public int getscore() {
+		return this.score;
+	}
+	
+	public void displayScore() {
+		super.displayScore();
+			if (this.score > this.highScore) {
+				this.highScore= this.score ;
+	
+	        }
+		
+		System.out.println("Score:"+ getscore() + "kills");
+		System.out.println("High Score:"+ gethighScore()+ "kills");
+			
+		}
+
+	public  void play() {
+		 int score = (int)(Math.random()*100.0);
+
+	}
+	}
+
+
+*********************
+
+public class MainGame {
+	public static void main(String[] args){
+		Game[] games= {
+				new FirstPersonShooter("Shehzad"),
+				new FirstPersonShooter("Roushdat"),		
+				
+		};
+		for(int i=0;i< games.length;i++) {
+			games[i].displayScore();
+			System.out.println();
+			
+		}
+	}
